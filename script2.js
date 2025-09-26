@@ -28,6 +28,7 @@ function getTemplateForView(view) {
             </header>
             <ul id="track-list"></ul>`,
         'yt-to-mp3': `
+            <header class="dashboard-header"><h2>YT to MP3</h2></header>
             <div class="yt-view-container">
                 <div class="yt-main-content">
                     <div class="yt-input-container">
@@ -77,35 +78,41 @@ function getTemplateForView(view) {
         controls: `
             <header class="dashboard-header"><h2>Settings</h2></header>
             <div class="controls-container">
-                <h3 class="settings-section-title">General</h3>
-                <div class="setting-row">
-                    <span>Dynamic Island Notifications</span>
-                    <label class="toggle-switch"><input type="checkbox" id="toggle-dynamic-island"><span class="slider"></span></label>
+                <div class="setting-row-group">
+                    <h3 class="settings-section-title">General</h3>
+                    <div class="setting-row">
+                        <span>Dynamic Island Notifications</span>
+                        <label class="toggle-switch"><input type="checkbox" id="toggle-dynamic-island"><span class="slider"></span></label>
+                    </div>
+                    <div class="setting-row">
+                        <span>Enable All Messages</span>
+                        <label class="toggle-switch"><input type="checkbox" id="toggle-messages"><span class="slider"></span></label>
+                    </div>
                 </div>
-                <div class="setting-row">
-                    <span>Enable All Messages</span>
-                    <label class="toggle-switch"><input type="checkbox" id="toggle-messages"><span class="slider"></span></label>
+                <div class="setting-row-group">
+                    <h3 class="settings-section-title">AI Features</h3>
+                     <div class="setting-row">
+                        <span>Enable AI DJ Transitions</span>
+                        <label class="toggle-switch"><input type="checkbox" id="toggle-ai-dj"><span class="slider"></span></label>
+                        <small>Let the AI announce the next track like a radio DJ.</small>
+                     </div>
                 </div>
-                <h3 class="settings-section-title">AI Features</h3>
-                 <div class="setting-row">
-                    <span>Enable AI DJ Transitions</span>
-                    <label class="toggle-switch"><input type="checkbox" id="toggle-ai-dj"><span class="slider"></span></label>
-                    <small>Let the AI announce the next track like a radio DJ.</small>
-                 </div>
-                <h3 class="settings-section-title">Performance & Appearance</h3>
-                <div class="setting-row">
-                    <span>App Title Glow Effect</span>
-                    <label class="toggle-switch"><input type="checkbox" id="toggle-title-glow"><span class="slider"></span></label>
-                </div>
-                <div class="setting-row">
-                    <span>Music Visualizer</span>
-                    <label class="toggle-switch"><input type="checkbox" id="toggle-music-visualizer"><span class="slider"></span></label>
-                    <small>Animated frequency bars in the player.</small>
-                </div>
-                <div class="setting-row">
-                    <span>Advanced Visual Effects</span>
-                    <label class="toggle-switch"><input type="checkbox" id="toggle-visual-effects"><span class="slider"></span></label>
-                    <small>Disables blur and other effects for speed.</small>
+                <div class="setting-row-group">
+                    <h3 class="settings-section-title">Performance & Appearance</h3>
+                    <div class="setting-row">
+                        <span>App Title Glow Effect</span>
+                        <label class="toggle-switch"><input type="checkbox" id="toggle-title-glow"><span class="slider"></span></label>
+                    </div>
+                    <div class="setting-row">
+                        <span>Music Visualizer</span>
+                        <label class="toggle-switch"><input type="checkbox" id="toggle-music-visualizer"><span class="slider"></span></label>
+                        <small>Animated frequency bars in the player.</small>
+                    </div>
+                    <div class="setting-row">
+                        <span>Advanced Visual Effects</span>
+                        <label class="toggle-switch"><input type="checkbox" id="toggle-visual-effects"><span class="slider"></span></label>
+                        <small>Disables blur and other effects for speed.</small>
+                    </div>
                 </div>
             </div>`,
         theme: `
@@ -231,7 +238,7 @@ function updateTopBarTitle(view) {
         'yt-to-mp3': 'YT to MP3',
         'ai-assistant': 'AI Assistant',
         controls: 'Settings',
-        theme: 'Themes',
+        theme: 'Theme',
         account: 'Account'
     };
     const titleEl = document.getElementById('current-view-title');
